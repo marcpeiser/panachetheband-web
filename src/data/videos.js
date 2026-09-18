@@ -36,6 +36,7 @@ export const videos = [
     title: 'You Can’t Do That',
     year: 'mid-70s',
     kind: 'original',
+    note: 'Another rehearsal rescued from the vaults, never played live as far as anyone remembers.',
   },
   {
     id: 'GVClJteZgHU',
@@ -48,6 +49,7 @@ export const videos = [
     title: 'Say You Will',
     year: 'mid-70s',
     kind: 'original',
+    note: 'A Dougie Campbell song — funky fusion yacht rock, from an early Greenock rehearsal, rescued from an old cassette.',
   },
   {
     id: 'JKHrs5UfG0A',
@@ -60,6 +62,7 @@ export const videos = [
     title: 'Try',
     year: 'mid-70s',
     kind: 'original',
+    note: 'A mid-70s Greenock rehearsal, rescued from the vaults. Not thought to have ever been played live.',
   },
   {
     id: 'THpUybwO-qw',
@@ -78,7 +81,7 @@ export const videos = [
     title: 'Sweet Lady — Reimagined',
     year: '2026',
     kind: 'original',
-    note: 'A new recording of one of the band’s own songs, fifty years on.',
+    note: 'A saxier new version of Dougie’s song, built around Pat Hamill’s original vocal. Fifty years on.',
   },
 
   {
@@ -95,7 +98,7 @@ export const videos = [
     writer: 'John Cooper',
     year: 'mid-70s',
     kind: 'cover',
-    note: 'A beautiful ballad written by John Cooper, a friend of ours from Irvine.',
+    note: 'A beautiful ballad written by John Cooper, a friend of ours from Irvine — whose song “One of the Few” was recorded by none other than Jimmy Webb. Live at a busy Victorian Carriage: even with all the chatter going on, Pat’s soulful voice shines through.',
   },
   {
     id: 'UII9snKSWc8',
@@ -103,7 +106,7 @@ export const videos = [
     writer: 'The Movies',
     year: 'mid-70s',
     kind: 'cover',
-    note: 'We used to call it “Sentimental Lady”! I think they were Joan Armatrading’s backing band back in the day.',
+    note: 'We used to call it “Sentimental Lady”! I think they were Joan Armatrading’s backing band back in the day. Live at the Victorian Carriage, restored from the original tape.',
   },
 
   {
