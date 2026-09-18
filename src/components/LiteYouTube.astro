@@ -1,0 +1,16 @@
+---
+// One listener for every player on the page.
+---
+<script is:inline>
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.lite-yt');
+    if (!btn || btn.dataset.loaded) return;
+    btn.dataset.loaded = '1';
+    const f = document.createElement('iframe');
+    f.src = `https://www.youtube-nocookie.com/embed/${btn.dataset.id}?autoplay=1&rel=0`;
+    f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
+    f.allowFullscreen = true;
+    f.title = btn.getAttribute('aria-label') || 'YouTube video';
+    btn.appendChild(f);
+  });
+</script>

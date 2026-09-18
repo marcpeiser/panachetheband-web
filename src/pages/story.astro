@@ -1,0 +1,139 @@
+---
+import Base from '../layouts/Base.astro';
+import Track from '../components/Track.astro';
+import LiteYouTube from '../components/LiteYouTube.astro';
+import { auricle } from '../data/videos.js';
+---
+<Base
+  title="The Story — Panache"
+  description="From the 2D Sparklers at Greenock High School through Violent Sabbath, the Slug Band and Auricle to Panache, the Victorian Carriage, a London publisher and a reunion in 2009."
+>
+  <section class="hero wrap">
+    <p class="kicker">1968 – 2009</p>
+    <h1>The Story</h1>
+    <p class="standfirst">
+      It runs from a school in Greenock to a publisher's studio in London, and it
+      was written down by the man who played guitar through all of it.
+    </p>
+  </section>
+
+  <section class="wrap prose">
+    <h2>A brief history of bandkind</h2>
+    <p>
+      Before Panache there was a school, and in the school there were bands. The
+      <strong>2D Sparklers</strong> at Greenock High wrote “I Think I'm Going Out
+      Of My Head” — Archie Petrie on melodica, with John Dunn and John McGeoch —
+      and someone kept the lyric sheet.
+    </p>
+    <p>
+      Then <strong>Violent Sabbath</strong>: Dougie Campbell on guitar and vocals,
+      George McClarkin on drums and vocals, <strong>John McGeoch</strong> on lead
+      guitar and Alasdair Cameron on bass. Then the <strong>Slug Band</strong> —
+      George, John and Alasdair with Raymond Wallace singing.
+    </p>
+    <p>
+      McGeoch left Greenock and became one of the defining guitarists of British
+      post-punk, with Magazine, Visage, Siouxsie and the Banshees and PiL. He died
+      on 4 March 2004. The bands he played in first are on this page because they
+      are where he started, and because two of the men beside him carried on and
+      formed Panache.
+    </p>
+
+    <h2>Auricle</h2>
+    <blockquote>
+      From the Greenock Telegraph (6th June 1974), Auricle was the band George,
+      Alan and I formed with Ian Parker. We used to play 20 minute-long
+      instrumentals at the Burns Howff pub in Glasgow.
+      <br /><br />
+      Ian wrote some cool tunes and we stretched our chops to play some fancy
+      chord charts and time signatures.
+      <br /><br />
+      Ian is now with the Hollies and has had an impressive musical career to
+      date. When Auricle split up, George, Alan and I stayed together in various
+      guises, playing the social clubs as a trio called the “Blue Shoes” and
+      pursuing original music with other musicians.
+      <cite>Dougie Campbell</cite>
+    </blockquote>
+    <p>
+      A tape of Auricle survives, recorded on a ghettoblaster at the Burns Howff
+      in 1974. They were all around eighteen to twenty years old.
+    </p>
+  </section>
+
+  <section class="wrap">
+    <ul class="tracks" style="grid-template-columns:minmax(0,22rem)">
+      <Track video={auricle} />
+    </ul>
+  </section>
+
+  <section class="wrap prose">
+    <h2>Panache, 1976</h2>
+    <p>
+      Panache was formed during 1976 when <strong>Alan Mackie</strong> (bass),
+      <strong>George McClarkin</strong> (drums) and <strong>Dougie Campbell</strong>
+      (guitar) joined forces with <strong>Pat Hamill</strong> (vocals) and
+      <strong>Robert Williams</strong> (keyboards), in an attempt to become
+      Scotland's “Steely Dan”.
+    </p>
+    <p>
+      They were based in Greenock, with a regular gig at the
+      <strong>Victorian Carriage</strong> in Inverkip Street. They played
+      <em>Kid Charlemagne</em> and <em>Haitian Divorce</em>, songs by Stevie
+      Wonder and Hall and Oates — and all the while they mixed in their own
+      songs, and explored tasty arrangements and five-part harmonies.
+    </p>
+    <p>
+      The focus of the band was the unique voice of Pat Hamill: sometimes sweet
+      and soulful, sometimes soaring and passionate. The other musicians were
+      just as serious about their craft, and Panache became a kind of collective
+      music academy in pursuit of musical excellence.
+    </p>
+    <p>
+      There were a couple of line-up changes. Robert left and
+      <strong>Alastair Sinclair</strong> joined on keyboards. George left and
+      <strong>Derek Taylor</strong> joined on drums. In the few years Panache
+      played out across the West of Scotland their sound turned into a funky
+      fusion of rock, soul and jazz — good enough to attract interest from the
+      music industry in London and the United States. In 1978 they recorded at
+      their publisher's studio in London.
+    </p>
+
+    <h2>The tapes</h2>
+    <p>
+      Very little of this was ever pressed. It exists because people kept things:
+      a reel from the Victorian Carriage recorded on two microphones into Dougie's
+      old Revox, rehearsals at the Red Dragon in Greenock, a jam at what was
+      probably Auchmountain Halls, and an Akai ghetto blaster left running in the
+      corner of a room in 1977.
+    </p>
+    <p>
+      One of the best recordings only came back in 2025. <strong>Alan Cumming</strong>,
+      who roadied for the band, had taped two Glasgow gigs at the Dial Inn and the
+      Amphora and kept the cassettes for the best part of fifty years. He ran into
+      Alan Mackie by chance and handed them over. Dougie cleaned them up from
+      South Africa.
+    </p>
+
+    <h2>The reunion, July 2009</h2>
+    <p>
+      In July 2009 Panache played again in Greenock. Alan, Dougie and George were
+      joined by Paul, Suzanne, Brian and Storme; Gerry filmed it and Hugh ran the
+      sound; Groovefellas and The Verdict played too. The shows raised
+      <strong>£1,100 for CHAS</strong>, the Children's Hospice Association
+      Scotland, and <strong>£150 for the Haven project</strong> in Port Glasgow.
+    </p>
+    <blockquote>
+      We had a great time and raised some funds for charity. Maybe we'll do this
+      again sometime!
+      <cite>From the band's website, 2009</cite>
+    </blockquote>
+    <p>
+      Pat Hamill was not there. He died in the mid-1990s, some fifteen years
+      before the band got back on stage, and thirty years before the tapes with
+      his voice on them began to go online.
+    </p>
+    <p><a href="/music/">Hear the recordings →</a></p>
+  </section>
+
+  <LiteYouTube />
+</Base>

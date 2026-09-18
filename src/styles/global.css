@@ -1,0 +1,284 @@
+/* Panache — 1976, Greenock.
+   Warm, printed, a bit worn. Album sleeve rather than web template. */
+
+:root {
+  --ink:      #f4ebdd;   /* cream, the "paper" colour but used as text */
+  --ink-dim:  #bda98e;
+  --ground:   #171310;   /* near-black, warm */
+  --ground-2: #221b16;
+  --amber:    #e0a341;
+  --oxblood:  #9c3520;
+  --rule:     #3a2e25;
+
+  --display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --body: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+
+  --measure: 34rem;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.075rem);
+  line-height: 1.65;
+  /* faint warm vignette so the black isn't flat */
+  background-image: radial-gradient(ellipse at 50% 0%, #241c15 0%, var(--ground) 60%);
+  background-attachment: fixed;
+}
+
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  font-variation-settings: 'SOFT' 20, 'WONK' 1;
+  margin: 0 0 0.5em;
+  text-wrap: balance;
+}
+
+h1 { font-size: clamp(2.4rem, 1.7rem + 3.4vw, 4.6rem); }
+h2 { font-size: clamp(1.6rem, 1.3rem + 1.4vw, 2.3rem); margin-top: 2.5em; }
+h3 { font-size: 1.2rem; margin-top: 2em; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+
+a { color: var(--amber); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+a:hover { color: var(--ink); }
+
+img { max-width: 100%; height: auto; display: block; }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 3rem 0;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 62rem;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.prose { max-width: var(--measure); }
+.prose p + h2, .prose p + h3 { margin-top: 2em; }
+
+/* ---------- masthead ---------- */
+
+.masthead {
+  border-bottom: 1px solid var(--rule);
+  padding-block: 1.1rem;
+}
+.masthead .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.5rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.wordmark {
+  font-family: var(--display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  text-decoration: none;
+  font-variation-settings: 'SOFT' 30, 'WONK' 1;
+}
+.wordmark:hover { color: var(--amber); }
+
+nav.site { display: flex; flex-wrap: wrap; gap: 0.25rem 1.4rem; }
+nav.site a {
+  color: var(--ink-dim);
+  text-decoration: none;
+  font-size: 0.94rem;
+  letter-spacing: 0.02em;
+}
+nav.site a:hover, nav.site a[aria-current='page'] { color: var(--amber); }
+
+/* ---------- hero ---------- */
+
+.hero { padding-block: clamp(3rem, 8vw, 6rem) clamp(2rem, 5vw, 3.5rem); }
+.hero .kicker {
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 1.2rem;
+}
+.hero .standfirst {
+  font-family: var(--display);
+  font-size: clamp(1.15rem, 1rem + 0.7vw, 1.5rem);
+  line-height: 1.45;
+  color: var(--ink-dim);
+  max-width: 38rem;
+  font-variation-settings: 'SOFT' 40;
+}
+
+/* ---------- video grid ---------- */
+
+.tracks {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+}
+
+.track figure { margin: 0; }
+
+.lite-yt {
+  display: block;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  padding: 0;
+  width: 100%;
+  cursor: pointer;
+  background: var(--ground-2) center/cover no-repeat;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.lite-yt::after {
+  /* play badge */
+  content: '';
+  position: absolute;
+  inset: 50% auto auto 50%;
+  translate: -50% -50%;
+  width: 3.4rem; height: 2.4rem;
+  border-radius: 0.5rem;
+  background: rgba(20,16,12,0.72);
+  box-shadow: inset 0 0 0 1px rgba(224,163,65,0.5);
+  transition: background 120ms ease;
+}
+.lite-yt::before {
+  content: '';
+  position: absolute;
+  inset: 50% auto auto 50%;
+  translate: -35% -50%;
+  z-index: 1;
+  border-style: solid;
+  border-width: 0.5rem 0 0.5rem 0.85rem;
+  border-color: transparent transparent transparent var(--ink);
+}
+.lite-yt:hover::after, .lite-yt:focus-visible::after { background: var(--oxblood); }
+.lite-yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+.track figcaption { padding-top: 0.7rem; }
+.track .t-title {
+  font-family: var(--display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-variation-settings: 'SOFT' 30;
+}
+.track .t-meta {
+  font-size: 0.82rem;
+  color: var(--ink-dim);
+  letter-spacing: 0.02em;
+}
+.track .t-note {
+  font-size: 0.9rem;
+  color: var(--ink-dim);
+  margin: 0.45rem 0 0;
+  line-height: 1.5;
+}
+
+/* ---------- song list ---------- */
+
+.songlist { list-style: none; padding: 0; margin: 1.5rem 0 0; max-width: 40rem; }
+.songlist li {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.songlist .n {
+  font-family: var(--display);
+  color: var(--amber);
+  font-size: 0.85rem;
+  min-width: 1.6rem;
+  font-variant-numeric: tabular-nums;
+}
+.songlist .missing { color: var(--ink-dim); }
+.songlist .tag {
+  margin-left: auto;
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+/* ---------- pull quote ---------- */
+
+blockquote {
+  margin: 2.5rem 0;
+  padding-left: 1.4rem;
+  border-left: 2px solid var(--oxblood);
+  font-family: var(--display);
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
+  line-height: 1.45;
+  color: var(--ink);
+  font-variation-settings: 'SOFT' 40, 'WONK' 1;
+}
+blockquote cite {
+  display: block;
+  margin-top: 0.7rem;
+  font-family: var(--body);
+  font-size: 0.85rem;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  color: var(--ink-dim);
+}
+
+/* ---------- members ---------- */
+
+.members { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; gap: 1.5rem 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr)); }
+.members .name { font-family: var(--display); font-size: 1.15rem; font-variation-settings: 'SOFT' 30; }
+.members .role { font-size: 0.85rem; color: var(--amber); letter-spacing: 0.06em; text-transform: uppercase; }
+.members .about { font-size: 0.9rem; color: var(--ink-dim); margin: 0.4rem 0 0; line-height: 1.5; }
+
+/* ---------- figure: the lyric sheet ---------- */
+
+.artefact { margin: 2.5rem 0; }
+.artefact img {
+  border: 1px solid var(--rule);
+  background: #d8cbb4;
+  padding: 0.5rem;
+  max-width: 22rem;
+}
+.artefact figcaption {
+  font-size: 0.85rem;
+  color: var(--ink-dim);
+  margin-top: 0.8rem;
+  max-width: 26rem;
+  line-height: 1.5;
+}
+
+/* ---------- footer ---------- */
+
+.site-foot {
+  border-top: 1px solid var(--rule);
+  margin-top: 5rem;
+  padding-block: 2.5rem 3.5rem;
+  font-size: 0.88rem;
+  color: var(--ink-dim);
+}
+.site-foot a { color: var(--ink-dim); }
+.site-foot a:hover { color: var(--amber); }
+.site-foot p { margin-bottom: 0.5em; }
+
+:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}

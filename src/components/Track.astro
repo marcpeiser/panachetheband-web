@@ -1,0 +1,24 @@
+---
+// Click-to-load YouTube. Nothing from Google is requested until the visitor
+// presses play, so the page stays fast and untracked for people who don't.
+const { video } = Astro.props;
+const { id, title, writer, year, note } = video;
+const poster = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+---
+<li class="track">
+  <figure>
+    <button
+      class="lite-yt"
+      data-id={id}
+      style={`background-image:url(${poster})`}
+      aria-label={`Play ${title}`}
+    ></button>
+    <figcaption>
+      <div class="t-title">{title}</div>
+      <div class="t-meta">
+        {writer ? `${writer} · ` : ''}{year}
+      </div>
+      {note && <p class="t-note">{note}</p>}
+    </figcaption>
+  </figure>
+</li>

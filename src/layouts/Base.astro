@@ -1,0 +1,67 @@
+---
+import '../styles/global.css';
+
+const { title, description } = Astro.props;
+const path = Astro.url.pathname;
+const nav = [
+  ['/', 'Home'],
+  ['/story/', 'The Story'],
+  ['/music/', 'Music'],
+  ['/band/', 'The Band'],
+];
+const isCurrent = (href) => (href === '/' ? path === '/' : path.startsWith(href));
+---
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(path, Astro.site)} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Panache" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&display=swap"
+    />
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="wrap">
+        <a class="wordmark" href="/">Panache</a>
+        <nav class="site" aria-label="Main">
+          {nav.map(([href, label]) => (
+            <a href={href} aria-current={isCurrent(href) ? 'page' : undefined}>{label}</a>
+          ))}
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-foot">
+      <div class="wrap">
+        <p>
+          Panache — Greenock, Scotland, 1976. The band's history was written by
+          Dougie Campbell; his words are kept here as he wrote them.
+        </p>
+        <p>
+          Recordings are being restored and uploaded by Alan Mackie at
+          <a href="https://www.youtube.com/@alanmackie4056" rel="noopener">Alan Mackie Music</a>.
+        </p>
+        <p>
+          If you played with the band, photographed them, or have a tape in a
+          drawer, we would like to hear from you —
+          <a href="mailto:info@panachetheband.com">info@panachetheband.com</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

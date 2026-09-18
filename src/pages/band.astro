@@ -1,0 +1,78 @@
+---
+import Base from '../layouts/Base.astro';
+
+const members = [
+  { name: 'Pat Hamill', role: 'Vocals', about: 'The focus of the band — sometimes sweet and soulful, sometimes soaring and passionate. He died in the mid-1990s.' },
+  { name: 'Dougie Campbell', role: 'Guitar', about: 'Played through every version of the band from the 2D Sparklers onward, and wrote down its history. Now lives in South Africa, where he restores the old tapes.' },
+  { name: 'Alan Mackie', role: 'Bass', about: 'Has spent the last few years transferring the archive to tape-by-tape and putting it online.' },
+  { name: 'George McClarkin', role: 'Drums', about: 'An original member, from Violent Sabbath and the Slug Band through Auricle to Panache. Co-wrote the 2D Sparklers song whose lyric sheet survives.' },
+  { name: 'Robert Williams', role: 'Keyboards', about: 'The original keyboard player, on the Victorian Carriage live recordings.' },
+  { name: 'Alastair Sinclair', role: 'Keyboards', about: 'Joined when Robert left, and played on the 1978 London studio session.' },
+  { name: 'Derek Taylor', role: 'Drums', about: 'Joined when George left, and played on the 1978 London studio session.' },
+];
+
+const around = [
+  { name: 'John McGeoch', role: 'Violent Sabbath, Slug Band', about: 'A schoolmate who played guitar alongside Dougie and George in Greenock, then left for Magazine, Visage, Siouxsie and the Banshees and PiL. He died on 4 March 2004.' },
+  { name: 'Ian Parker', role: 'Auricle', about: 'Wrote the tunes for Auricle and stretched everyone’s chops. Later joined the Hollies.' },
+  { name: 'Alan Cumming', role: 'Roadie', about: 'Taped two Glasgow gigs at the Dial Inn and the Amphora, kept the cassettes for nearly fifty years, and handed them over in 2025.' },
+  { name: 'Alasdair Cameron', role: 'Violent Sabbath, Slug Band', about: 'Bass, in the school bands that came before.' },
+  { name: 'Archie Petrie, John Dunn', role: '2D Sparklers', about: 'Greenock High School. John Dunn is a co-writer on the surviving lyric sheet.' },
+  { name: 'Raymond Wallace', role: 'Slug Band', about: 'Vocals.' },
+];
+---
+<Base
+  title="The Band — Panache"
+  description="Who played in Panache: Pat Hamill, Dougie Campbell, Alan Mackie, George McClarkin, Robert Williams, Alastair Sinclair and Derek Taylor — and the people around them."
+>
+  <section class="hero wrap">
+    <p class="kicker">Who played</p>
+    <h1>The Band</h1>
+    <p class="standfirst">
+      Seven men passed through Panache between 1976 and the end of the decade,
+      and three of them had already been in bands together since school.
+    </p>
+  </section>
+
+  <section class="wrap">
+    <ul class="members">
+      {members.map((m) => (
+        <li>
+          <div class="name">{m.name}</div>
+          <div class="role">{m.role}</div>
+          <p class="about">{m.about}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="wrap">
+    <hr />
+    <div class="prose">
+      <h2>Around the band</h2>
+      <p>
+        The bands before, the people who wrote the songs they borrowed, and the
+        man who kept the tapes.
+      </p>
+    </div>
+    <ul class="members">
+      {around.map((m) => (
+        <li>
+          <div class="name">{m.name}</div>
+          <div class="role">{m.role}</div>
+          <p class="about">{m.about}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="wrap prose">
+    <hr />
+    <h2>Corrections wanted</h2>
+    <p>
+      This page was rebuilt from an archived copy of the band's old website and
+      from the notes on the video uploads. Names, instruments and dates may be
+      wrong, and there are people missing. If you know better, please write to
+      <a href="mailto:info@panachetheband.com">info@panachetheband.com</a>.
+    </p>
+  </section>
+</Base>

@@ -1,0 +1,88 @@
+---
+import Base from '../layouts/Base.astro';
+import Track from '../components/Track.astro';
+import LiteYouTube from '../components/LiteYouTube.astro';
+import { videos, originals } from '../data/videos.js';
+
+const byKind = (k) => videos.filter((v) => v.kind === k);
+const missing = originals.filter((s) => !s.video).length;
+---
+<Base
+  title="Music — Panache"
+  description="The recordings of Panache: their own songs, the Victorian Carriage live tapes, and the 2009 reunion. Plus the fifteen originals, and which of them are still missing."
+>
+  <section class="hero wrap">
+    <p class="kicker">The recordings</p>
+    <h1>Music</h1>
+    <p class="standfirst">
+      Rehearsal tapes, a pub residency recorded on two microphones, one proper
+      studio session in London, and a reunion thirty years later.
+    </p>
+  </section>
+
+  <section class="wrap">
+    <div class="prose">
+      <h2>Their own songs</h2>
+      <p>
+        Panache wrote and played originals from the start. These are the ones that
+        have made it off tape so far.
+      </p>
+    </div>
+    <ul class="tracks">
+      {byKind('original').map((video) => <Track video={video} />)}
+    </ul>
+  </section>
+
+  <section class="wrap">
+    <div class="prose">
+      <h2>Live at the Victorian Carriage</h2>
+      <p>
+        Recorded on two microphones into Dougie's old Revox, with the line-up of
+        Robert, Alan, Pat, George and Dougie. In Dougie's words: these songs will
+        sound best with a pint of lager in one hand and a packet of crisps in the
+        other.
+      </p>
+    </div>
+    <ul class="tracks">
+      {byKind('cover').map((video) => <Track video={video} />)}
+    </ul>
+  </section>
+
+  <section class="wrap">
+    <div class="prose">
+      <h2>The reunion, 2009</h2>
+      <p>
+        Filmed by Gerry, with sound by Hugh, at the Greenock shows in July 2009.
+      </p>
+    </div>
+    <ul class="tracks">
+      {byKind('reunion').map((video) => <Track video={video} />)}
+    </ul>
+  </section>
+
+  <section class="wrap">
+    <hr />
+    <div class="prose">
+      <h2>Pour it out — the fifteen originals</h2>
+      <p>
+        This is the track list from the band's own website, where you could once
+        play all fifteen. Those files are gone from the web; {missing} of the
+        fifteen have no recording online today. If you have any of them on tape,
+        please get in touch.
+      </p>
+    </div>
+    <ol class="songlist">
+      {originals.map((song, i) => (
+        <li>
+          <span class="n">{String(i + 1).padStart(2, '0')}</span>
+          {song.video
+            ? <a href={`https://www.youtube.com/watch?v=${song.video}`} rel="noopener">{song.title}</a>
+            : <span class="missing">{song.title}</span>}
+          {!song.video && <span class="tag">missing</span>}
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <LiteYouTube />
+</Base>

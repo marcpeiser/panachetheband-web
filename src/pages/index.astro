@@ -1,0 +1,87 @@
+---
+import Base from '../layouts/Base.astro';
+import Track from '../components/Track.astro';
+import LiteYouTube from '../components/LiteYouTube.astro';
+import { videos } from '../data/videos.js';
+
+const featured = ['B3ItVf-QHZo', 'sYqq8qmViJk', 'QcQqdULskpk']
+  .map((id) => videos.find((v) => v.id === id));
+---
+<Base
+  title="Panache — Greenock, 1976"
+  description="Panache were a funk, soul and jazz-rock band from Greenock, Scotland, formed in 1976. Their recordings, their story, and the people who made them."
+>
+  <section class="hero wrap">
+    <p class="kicker">Greenock, Scotland · formed 1976</p>
+    <h1>Panache</h1>
+    <p class="standfirst">
+      Five musicians from Inverclyde who set out to become Scotland's Steely Dan,
+      held down a residency at the Victorian Carriage, wrote fifteen songs of
+      their own, and very nearly got there.
+    </p>
+  </section>
+
+  <section class="wrap">
+    <div class="prose">
+      <p>
+        They played covers to fill a room — <em>Kid Charlemagne</em>, Stevie Wonder,
+        Hall and Oates — and originals because they meant to be a band that
+        mattered. Tasty arrangements, five-part harmonies, and at the front the
+        voice of Pat Hamill: sometimes sweet and soulful, sometimes soaring and
+        passionate. By 1978 they had a publisher in London.
+      </p>
+      <p>
+        Almost none of it was ever released. What survived survived on cassette,
+        on reel, and on a ghetto blaster left running in a rehearsal room — and
+        it is only online now because the band have spent the last few years
+        transferring it, tape by tape.
+      </p>
+    </div>
+
+    <h2>Start here</h2>
+    <ul class="tracks">
+      {featured.map((video) => <Track video={video} />)}
+    </ul>
+    <p style="margin-top:1.75rem"><a href="/music/">All the recordings →</a></p>
+  </section>
+
+  <section class="wrap">
+    <hr />
+    <div class="prose">
+      <h2>Before Panache</h2>
+      <p>
+        The band did not begin in 1976. It began in a Greenock classroom, in a
+        group called the 2D Sparklers, with a song written out by hand on a sheet
+        of foolscap.
+      </p>
+    </div>
+
+    <figure class="artefact">
+      <img
+        src="/going-out-of-my-head.jpg"
+        alt="A hand-written lyric sheet for 'I Think I'm Going Out Of My Head', with the chorus bracketed in the margin and a credit line at the foot reading: words and music by G. McClarkin, D. Campbell & J. Dunn & John McGeoch."
+        width="250"
+        height="388"
+      />
+      <figcaption>
+        <strong>“I Think I'm Going Out Of My Head”</strong> — the 2D Sparklers,
+        Greenock High School. Credited at the foot to G. McClarkin, D. Campbell,
+        J. Dunn and John McGeoch. This is the only photograph or image of any kind
+        that survives from the band's original website.
+      </figcaption>
+    </figure>
+
+    <div class="prose">
+      <p>
+        That last name is the one people recognise. John McGeoch went on to play
+        guitar in Magazine, Visage, Siouxsie and the Banshees and Public Image
+        Ltd, and is regularly named among the most influential guitarists of his
+        generation. Before any of that he was a boy in Greenock in a band called
+        Violent Sabbath with two of the men who would form Panache.
+        <a href="/story/">The whole story is here →</a>
+      </p>
+    </div>
+  </section>
+
+  <LiteYouTube />
+</Base>
