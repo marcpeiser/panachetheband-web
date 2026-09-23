@@ -126,7 +126,10 @@ nav.site a:hover, nav.site a[aria-current='page'] { color: var(--amber); }
 
 /* ---------- hero ---------- */
 
-.hero { padding-block: clamp(3rem, 8vw, 6rem) clamp(2rem, 5vw, 3.5rem); }
+.hero {
+  padding-block: clamp(3rem, 8vw, 6rem) clamp(2rem, 5vw, 3.5rem);
+  position: relative;
+}
 .hero .kicker {
   font-size: 0.82rem;
   letter-spacing: 0.16em;
@@ -141,6 +144,23 @@ nav.site a:hover, nav.site a[aria-current='page'] { color: var(--amber); }
   color: var(--ink-dim);
   max-width: 38rem;
   font-variation-settings: 'SOFT' 40;
+}
+
+.waveform-accent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(200px, 40vw, 300px);
+  height: clamp(60px, 12vw, 100px);
+  opacity: 0.2;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* ---------- video grid ---------- */

@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Track from '../components/Track.astro';
 import LiteYouTube from '../components/LiteYouTube.astro';
+import Waveform from '../components/Waveform.astro';
 import { videos } from '../data/videos.js';
 
 const featured = ['B3ItVf-QHZo', 'sYqq8qmViJk', 'QcQqdULskpk']
@@ -12,6 +13,9 @@ const featured = ['B3ItVf-QHZo', 'sYqq8qmViJk', 'QcQqdULskpk']
   description="Panache were a funk, soul and jazz-rock band from Greenock, Scotland, formed in 1976. Their recordings, their story, and the people who made them."
 >
   <section class="hero wrap">
+    <div class="waveform-accent">
+      <Waveform />
+    </div>
     <p class="kicker">Greenock, Scotland · formed 1976</p>
     <h1>Panache</h1>
     <p class="standfirst">
