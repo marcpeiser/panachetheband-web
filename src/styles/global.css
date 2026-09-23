@@ -83,6 +83,10 @@ hr {
   align-items: baseline;
   justify-content: space-between;
 }
+.wordmark-wrapper {
+  position: relative;
+  display: inline-block;
+}
 .wordmark {
   font-family: var(--display);
   font-size: 1.35rem;
@@ -93,6 +97,23 @@ hr {
   font-variation-settings: 'SOFT' 30, 'WONK' 1;
 }
 .wordmark:hover { color: var(--amber); }
+.easter-egg-reveal {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+  max-width: 15rem;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  z-index: 10;
+}
+.wordmark-wrapper:hover .easter-egg-reveal {
+  opacity: 1;
+}
 
 nav.site { display: flex; flex-wrap: wrap; gap: 0.25rem 1.4rem; }
 nav.site a {
