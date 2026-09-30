@@ -10,8 +10,6 @@
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.4",
-    "@playwright/test": "^1.63.0",
-    "astro": "^5.14.1",
-    "playwright": "^1.63.0"
+    "astro": "^5.14.1"
   }
 }
