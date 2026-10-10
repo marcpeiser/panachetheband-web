@@ -11,7 +11,7 @@ const missing = originals.filter((s) => !s.video).length;
   title="Music — Panache"
   description="The recordings of Panache: their own songs, the Victorian Carriage live tapes, and the 2009 reunion. Plus the fifteen originals, and which of them are still missing."
 >
-  <section class="hero wrap">
+  <section class="hero tight wrap">
     <p class="kicker">The recordings</p>
     <h1>Music</h1>
     <p class="standfirst">
@@ -29,7 +29,7 @@ const missing = originals.filter((s) => !s.video).length;
   </section>
 
   <section class="wrap">
-    <div class="prose">
+    <div class="prose wide">
       <h2>Their own songs</h2>
       <p>
         Panache wrote and played originals from the start. These are the ones that
@@ -42,7 +42,7 @@ const missing = originals.filter((s) => !s.video).length;
   </section>
 
   <section class="wrap">
-    <div class="prose">
+    <div class="prose wide">
       <h2>Live at the Victorian Carriage</h2>
       <p>
         Recorded on two microphones into Dougie's old Revox, with the line-up of
@@ -57,7 +57,7 @@ const missing = originals.filter((s) => !s.video).length;
   </section>
 
   <section class="wrap">
-    <div class="prose">
+    <div class="prose wide">
       <h2>The reunion, 2009</h2>
       <p>
         Filmed by Gerry, with sound by Hugh, at the Greenock shows in July 2009.
@@ -70,7 +70,7 @@ const missing = originals.filter((s) => !s.video).length;
 
   <section class="wrap">
     <hr />
-    <div class="prose">
+    <div class="prose wide">
       <h2>Pour it out — the fifteen originals</h2>
       <p>
         This is the track list from the band's own website, where you could once
@@ -88,7 +88,6 @@ const missing = originals.filter((s) => !s.video).length;
           {song.video
             ? <a href={`https://www.youtube.com/watch?v=${song.video}`} rel="noopener">{song.title}</a>
             : <span class="missing">{song.title}</span>}
-          {!song.video && <span class="tag">missing</span>}
         </li>
       ))}
     </ol>

@@ -68,6 +68,7 @@ hr {
 }
 
 .prose { max-width: var(--measure); }
+.prose.wide { max-width: none; }
 .prose p + h2, .prose p + h3 { margin-top: 2em; }
 
 /* ---------- masthead ---------- */
@@ -106,6 +107,8 @@ nav.site a:hover, nav.site a[aria-current='page'] { color: var(--amber); }
 /* ---------- hero ---------- */
 
 .hero { padding-block: clamp(3rem, 8vw, 6rem) clamp(2rem, 5vw, 3.5rem); }
+.hero.tight { padding-bottom: 0.5rem; }
+.hero.tight + section h2 { margin-top: 1.5rem; }
 .hero .kicker {
   font-size: 0.82rem;
   letter-spacing: 0.16em;
@@ -223,13 +226,6 @@ nav.site a:hover, nav.site a[aria-current='page'] { color: var(--amber); }
   font-variant-numeric: tabular-nums;
 }
 .songlist .missing { color: var(--ink-dim); }
-.songlist .tag {
-  margin-left: auto;
-  font-size: 0.74rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-}
 
 /* ---------- pull quote ---------- */
 
