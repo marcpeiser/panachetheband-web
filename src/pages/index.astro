@@ -4,7 +4,7 @@ import Track from '../components/Track.astro';
 import LiteYouTube from '../components/LiteYouTube.astro';
 import { videos } from '../data/videos.js';
 
-const featured = ['B3ItVf-QHZo', 'sYqq8qmViJk', 'QcQqdULskpk']
+const featured = ['oXAZbzYCNWw', 'PhBQd6u2row', 'uoGf1Ly1_ls']
   .map((id) => videos.find((v) => v.id === id));
 ---
 <Base
@@ -42,7 +42,9 @@ const featured = ['B3ItVf-QHZo', 'sYqq8qmViJk', 'QcQqdULskpk']
     <ul class="tracks">
       {featured.map((video) => <Track video={video} />)}
     </ul>
-    <p style="margin-top:1.75rem"><a href="/music/">All the recordings →</a></p>
+    <p style="margin-top:1.75rem"><a href="/music/">All the recordings →</a>
+      · <a href="https://www.youtube.com/@dougcampbellmusic2162" rel="noopener">Doug's YouTube</a>
+      · <a href="https://dougcampbell1.bandcamp.com/album/panache" rel="noopener">Buy on Bandcamp</a></p>
   </section>
 
   <section class="wrap">

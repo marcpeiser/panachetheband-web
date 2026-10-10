@@ -1,38 +1,39 @@
-// Video archive. Source: youtube.com/@alanmackie4056 (active, Alan Mackie digitising the
-// archive since Oct 2023) and youtube.com/@panachetheband (2009 reunion uploads, dormant).
-// `note` text is drawn from the uploader's own video descriptions.
+// Video archive. Source: Doug Campbell's channel, youtube.com/@dougcampbellmusic2162
+// (playlist "Panache Songs"). Entries still on Alan Mackie's channel
+// (@alanmackie4056) or @panachetheband have no Doug upload yet; swap the ID when one appears.
+// `note` text is drawn from the original uploader's video descriptions.
 
 export const videos = [
   {
-    id: 'B3ItVf-QHZo',
+    id: 'oXAZbzYCNWw',
     title: 'We Gotta Make It',
     year: 'c. 1977',
     kind: 'original',
     note: 'A Greenock rehearsal, captured on the old Akai ghetto blaster.',
   },
   {
-    id: 'QcQqdULskpk',
+    id: 'uoGf1Ly1_ls',
     title: 'Getting Closer',
     year: '1978',
     kind: 'original',
     note: 'Recorded at the band’s publisher’s studio in London — Alastair Sinclair on keyboards and Derek Taylor on drums, with Pat, Alan and Dougie.',
   },
   {
-    id: 'wdDjuVAxK-4',
+    id: 'ZfmMXsyAHdg',
     title: 'Burn It Up',
     year: 'c. 1977',
     kind: 'original',
     note: 'Rehearsing at the Red Dragon in Greenock. One take, totally live. Dougie’s song about violent extremism and the madness of crowds.',
   },
   {
-    id: 'GotqY6XWb3M',
+    id: 'RFqAzy2bktg',
     title: 'Cold Night (jam)',
     year: 'c. 1977',
     kind: 'original',
     note: 'Possibly Auchmountain Halls. A reggae version of a song they otherwise played straight.',
   },
   {
-    id: 'B_xOSvsVJpo',
+    id: 'wsP_lCFobGk',
     title: 'You Can’t Do That',
     year: 'mid-70s',
     kind: 'original',
@@ -45,33 +46,33 @@ export const videos = [
     kind: 'original',
   },
   {
-    id: 'AXEz_vNjHJQ',
+    id: 'LEMr8jgCuM4',
     title: 'Say You Will',
     year: 'mid-70s',
     kind: 'original',
     note: 'A Dougie Campbell song — funky fusion yacht rock, from an early Greenock rehearsal, rescued from an old cassette.',
   },
   {
-    id: 'JKHrs5UfG0A',
+    id: '5Kd4Ej6KdWQ',
     title: 'Give It All You’ve Got',
     year: 'mid-70s',
     kind: 'original',
   },
   {
-    id: '89NDG95DQjs',
+    id: '70_IPRKwNko',
     title: 'Try',
     year: 'mid-70s',
     kind: 'original',
     note: 'A mid-70s Greenock rehearsal, rescued from the vaults. Not thought to have ever been played live.',
   },
   {
-    id: 'THpUybwO-qw',
+    id: '_ldqomcYsEc',
     title: 'Party Feeling / Keep Talking',
     year: 'mid-70s',
     kind: 'original',
   },
   {
-    id: '4GSyRToOtoQ',
+    id: 'D_qrc_kbrKE',
     title: 'Too Much Too Soon',
     year: 'mid-70s',
     kind: 'original',
@@ -83,9 +84,19 @@ export const videos = [
     kind: 'original',
     note: 'A saxier new version of Dougie’s song, built around Pat Hamill’s original vocal. Fifty years on.',
   },
+  {
+    id: '3Yw79WaMz3s',
+    title: 'Spyrock',
+    kind: 'original',
+  },
+  {
+    id: 'X-5yAJr6yKs',
+    title: 'Out In The Cold',
+    kind: 'original',
+  },
 
   {
-    id: 'sYqq8qmViJk',
+    id: 'PhBQd6u2row',
     title: 'Eleanor Rigby',
     writer: 'Lennon–McCartney',
     year: 'mid-70s',
@@ -93,7 +104,7 @@ export const videos = [
     note: 'Live at the Victorian Carriage. Left to right: Robert Williams, Alan Mackie, Pat Hamill, George McClarkin, Dougie Campbell. The Beatles tune taken at a fast pace with a few jazzy chords.',
   },
   {
-    id: 'YptlI3cpBBM',
+    id: 'ZXj2aCSmth0',
     title: 'Ain’t It Strange',
     writer: 'John Cooper',
     year: 'mid-70s',
@@ -101,7 +112,7 @@ export const videos = [
     note: 'A beautiful ballad written by John Cooper, a friend of ours from Irvine — whose song “One of the Few” was recorded by none other than Jimmy Webb. Live at a busy Victorian Carriage: even with all the chatter going on, Pat’s soulful voice shines through.',
   },
   {
-    id: 'UII9snKSWc8',
+    id: 'XvZCHggY-4c',
     title: 'Look For My Light',
     writer: 'The Movies',
     year: 'mid-70s',
@@ -110,7 +121,7 @@ export const videos = [
   },
 
   {
-    id: 'zzusFdyOTHY',
+    id: 'HkWZBV5oN78',
     title: 'Haitian Divorce',
     writer: 'Steely Dan',
     year: '2009',
@@ -175,13 +186,13 @@ export const originals = [
   { title: 'Trudi' },
   { title: 'Don’t Leave It Up To Me' },
   { title: 'To The Full' },
-  { title: 'Getting Closer', video: 'QcQqdULskpk' },
+  { title: 'Getting Closer', video: 'uoGf1Ly1_ls' },
   { title: 'I’ll Be Around' },
   { title: 'All That I Need' },
   { title: 'Water Baby' },
   { title: 'Let’s Have A Beautiful Night' },
   { title: 'Real Nice Girl' },
-  { title: 'Too Much Too Soon', video: '4GSyRToOtoQ' },
+  { title: 'Too Much Too Soon', video: 'D_qrc_kbrKE' },
   { title: 'Feelings' },
-  { title: 'Burn It Up', video: 'wdDjuVAxK-4' },
+  { title: 'Burn It Up', video: 'ZfmMXsyAHdg' },
 ];

@@ -3,14 +3,29 @@
 ---
 <script is:inline>
   document.addEventListener('click', (e) => {
-    const btn = e.target.closest('.lite-yt');
-    if (!btn || btn.dataset.loaded) return;
-    btn.dataset.loaded = '1';
-    const f = document.createElement('iframe');
-    f.src = `https://www.youtube-nocookie.com/embed/${btn.dataset.id}?autoplay=1&rel=0`;
-    f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
-    f.allowFullscreen = true;
-    f.title = btn.getAttribute('aria-label') || 'YouTube video';
-    btn.appendChild(f);
+    const play = e.target.closest('.lite-yt .play');
+    if (play) {
+      const box = play.parentElement;
+      const f = document.createElement('iframe');
+      f.src = `https://www.youtube-nocookie.com/embed/${box.dataset.id}?autoplay=1&rel=0`;
+      f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
+      f.allowFullscreen = true;
+      f.title = play.getAttribute('aria-label') || 'YouTube video';
+      play.hidden = true;
+      box.appendChild(f);
+      const stop = document.createElement('button');
+      stop.type = 'button';
+      stop.className = 'stop';
+      stop.textContent = 'Stop';
+      box.after(stop);
+      return;
+    }
+    const stop = e.target.closest('.stop');
+    if (stop) {
+      const box = stop.previousElementSibling;
+      box.querySelector('iframe').remove();
+      box.querySelector('.play').hidden = false;
+      stop.remove();
+    }
   });
 </script>

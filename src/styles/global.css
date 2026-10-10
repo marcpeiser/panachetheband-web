@@ -160,15 +160,12 @@ nav.site a:hover, nav.site a[aria-current='page'] { color: var(--amber); }
   display: block;
   position: relative;
   aspect-ratio: 16 / 9;
-  border: 0;
-  padding: 0;
   width: 100%;
-  cursor: pointer;
   background: var(--ground-2) center/cover no-repeat;
   border-radius: 2px;
   overflow: hidden;
 }
-.lite-yt::after {
+.lite-yt .play::after {
   /* play badge */
   content: '';
   position: absolute;
@@ -180,7 +177,7 @@ nav.site a:hover, nav.site a[aria-current='page'] { color: var(--amber); }
   box-shadow: inset 0 0 0 1px rgba(224,163,65,0.5);
   transition: background 120ms ease;
 }
-.lite-yt::before {
+.lite-yt .play::before {
   content: '';
   position: absolute;
   inset: 50% auto auto 50%;
@@ -190,7 +187,24 @@ nav.site a:hover, nav.site a[aria-current='page'] { color: var(--amber); }
   border-width: 0.5rem 0 0.5rem 0.85rem;
   border-color: transparent transparent transparent var(--ink);
 }
-.lite-yt:hover::after, .lite-yt:focus-visible::after { background: var(--oxblood); }
+.lite-yt .play:hover::after, .lite-yt .play:focus-visible::after { background: var(--oxblood); }
+.lite-yt .play {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: 0; padding: 0; background: none;
+  cursor: pointer;
+}
+.lite-yt .play[hidden] { display: none; }
+.stop {
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.9rem;
+  font: inherit; font-size: 0.85rem;
+  color: var(--ink);
+  background: var(--oxblood);
+  border: 0; border-radius: 2px;
+  cursor: pointer;
+}
+.stop:hover, .stop:focus-visible { background: var(--amber); color: var(--ground); }
 .lite-yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
 .track figcaption { padding-top: 0.7rem; }
