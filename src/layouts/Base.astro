@@ -33,15 +33,7 @@ const isCurrent = (href) => (href === '/' ? path === '/' : path.startsWith(href)
   <body>
     <header class="masthead">
       <div class="wrap">
-        <div class="wordmark-wrapper">
-          <a class="wordmark" href="/">Panache</a>
-          <img
-            src="/easter-egg.svg"
-            alt=""
-            class="easter-egg-reveal"
-            aria-hidden="true"
-          />
-        </div>
+        <a class="wordmark" href="/">Panache</a>
         <nav class="site" aria-label="Main">
           {nav.map(([href, label]) => (
             <a href={href} aria-current={isCurrent(href) ? 'page' : undefined}>{label}</a>
